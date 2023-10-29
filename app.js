@@ -5,6 +5,8 @@ import cors from "cors";
 import helmet from "helmet";
 import dotenv from "dotenv";
 
+import clientRouter from "./routers/clientRouter.js";
+import noteRouter from "./routers/noteRouter.js";
 import userRouter from "./routers/userRouter.js";
 
 dotenv.config();
@@ -26,6 +28,8 @@ mongoose
   .then(() => console.log("DB Connected"))
   .catch((error) => console.log(error));
 
+app.use("/client", clientRouter);
+app.use("/note", noteRouter);
 app.use("/user", userRouter);
 
-app.listen(process.env.PORT || 5000, () => console.log("Server is running."));
+app.listen(process.env.PORT || 5000, (x) => console.log("Server is running."));
