@@ -5,6 +5,7 @@ const projectModel = mongoose.Schema({
   name: String,
   info: String,
   date: Date,
+  estimate: Date,
   done: Boolean,
 });
 

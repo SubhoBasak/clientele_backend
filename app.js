@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 
 import clientRouter from "./routers/clientRouter.js";
 import noteRouter from "./routers/noteRouter.js";
+import projectRouter from "./routers/projectRouter.js";
 import userRouter from "./routers/userRouter.js";
 
 dotenv.config();
@@ -30,6 +31,7 @@ mongoose
 
 app.use("/client", clientRouter);
 app.use("/note", noteRouter);
+app.use("/project", projectRouter);
 app.use("/user", userRouter);
 
 app.listen(process.env.PORT || 5000, (x) => console.log("Server is running."));
